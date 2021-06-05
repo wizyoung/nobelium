@@ -1,8 +1,8 @@
 const BLOG = {
-  title: 'yokinist.com',
+  title: 'yokinist.me',
   author: 'yokinist',
   email: 'yokinist@gmail.com',
-  link: 'https://yokinist.com',
+  link: 'https://yokinist.me',
   description: '色々なことを雑多に書いていく場所',
   lang: 'en-US',
   appearance: 'dark', // ['light', 'dark', 'auto'],
@@ -18,7 +18,7 @@ const BLOG = {
   autoCollapsedNavBar: false, // the automatically collapsed navigation bar
   socialLink: 'https://twitter.com/yokinist',
   seo: {
-    keywords: ['Blog', 'Website', 'Notion', 'yokinist'],
+    keywords: ['yokinist'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
