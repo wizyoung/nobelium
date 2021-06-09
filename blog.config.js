@@ -4,7 +4,7 @@ const BLOG = {
   email: 'yokinist@gmail.com',
   link: 'https://yokinist.me',
   description: '色々なことを雑多に書いていく場所',
-  lang: 'en-US',
+  lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP']
   appearance: 'dark', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
