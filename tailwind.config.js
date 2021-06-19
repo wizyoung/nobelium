@@ -13,7 +13,12 @@ const fontSerifCJK = !CJK()
  * @type {import('@types/tailwindcss/tailwind-config').TailwindConfig}
  */
 const tailwindConfig = {
-  purge: ['./pages/**/*.js', './components/**/*.js', './layouts/**/*.js'],
+  purge: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}'
+  ],
+  mode: 'jit',
   darkMode: BLOG.appearance === 'auto' ? 'media' : 'class', // or 'media' or 'class'
   theme: {
     extend: {
