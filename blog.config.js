@@ -27,7 +27,7 @@
   socialLink: 'https://github.com/wizyoung',
   seo: {
     keywords: ['wizyoung', 'blog'],
-    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
+    googleSiteVerification: 'jX68FQL_I7zNWbywl8Mne2nsMTvLrK9gsRX-haUgll4' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
