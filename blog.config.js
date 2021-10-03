@@ -23,7 +23,7 @@
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://simple-og-image.vercel.app', // The link to generate OG image, don't end with a slash
   // detail: https://github.com/yokinist/og-image/blob/main/api/_lib/types.ts#L2-L12
-  socialLink: 'https://twitter.com/yokinist',
+  socialLink: 'https://github.com/wizyoung',
   seo: {
     keywords: ['wizyoung', 'blog'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
@@ -38,7 +38,7 @@
       domainId: '' // e.g '0e2257a8-54d4-4847-91a1-0311ea48cc7b'
     },
     gaConfig: {
-      measurementId: '' // e.g: G-XXXXXXXXXX
+      measurementId: 'G-5X0L015PPH' // e.g: G-XXXXXXXXXX
     }
   },
   comment: {
@@ -54,7 +54,7 @@
       distractionFreeMode: false
     },
     utterancesConfig: {
-      repo: ''
+      repo: 'wizyoung/utterances'
     },
     cusdisConfig: {
       appId: '', // data-app-id'
