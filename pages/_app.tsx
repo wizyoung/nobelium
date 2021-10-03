@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import 'prismjs'
 import 'prismjs/themes/prism.css'
 import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-javascript'
