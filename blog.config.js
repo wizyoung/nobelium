@@ -21,8 +21,9 @@
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
+  ogImageGenerateURL: 'https://simple-og-image.vercel.app', // The link to generate OG image, don't end with a slash
   // https://simple-og-image.vercel.app
+  // https://og-image-craigary.vercel.app
   // detail: https://github.com/yokinist/og-image/blob/main/api/_lib/types.ts#L2-L12
   socialLink: 'https://github.com/wizyoung',
   seo: {
