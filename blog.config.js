@@ -1,13 +1,12 @@
 /**
  * @type {import('@/types').BlogConfig}
  */
- const BLOG = {
+const BLOG = {
   title: 'wizyoung',
   author: 'wizyoung',
   email: 'happyyanghehe@gmail.com',
   link: 'https://wizyoung.vercel.app',
-  description:
-    '',
+  description: '',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'dark', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
@@ -21,7 +20,7 @@
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://simple-og-image.vercel.app', // The link to generate OG image, don't end with a slash
+  ogImageGenerateURL: 'https://og-image-craigary.vercel.app', // The link to generate OG image, don't end with a slash
   // https://simple-og-image.vercel.app
   // https://og-image-craigary.vercel.app
   // detail: https://github.com/yokinist/og-image/blob/main/api/_lib/types.ts#L2-L12
