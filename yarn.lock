@@ -3587,10 +3587,10 @@ normalize-url@^6.0.1:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.0.1.tgz#a4f27f58cf8c7b287b440b8a8201f42d0b00d256"
   integrity sha512-VU4pzAuh7Kip71XEmO9aNREYAdMHFGTVj/i+CaTImS8x0i1d3jUZkXhqluy/PRgjPLMgsLQulYY3PJ/aSbSjpQ==
 
-notion-client@^4.8.6:
-  version "4.8.6"
-  resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-4.8.6.tgz#79bd91593f4727ab73dcd8dca76bb5c65894c196"
-  integrity sha512-Ci3k1ccnZHsL+NHNhzxwtvGoQYcuf7pBCRZUUXrkgZYyMnlZ7zaDq5ZALKQFaNfBFx+TrXLP04JOH+J+M0O2Jw==
+notion-client@^4.9.2:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/notion-client/-/notion-client-4.9.2.tgz#3fa0f351731962f4a8336355f42308d0404ad751"
+  integrity sha512-IaldqaS1dEfdQsbUIdXqeC4UpMg37KQ7ZZEboLsCzwWkRczqbG4++cqq+TNChwMevI5kHBOoQAMdxTPQF1Ix4g==
   dependencies:
     got "^11.8.1"
     notion-types "^4.8.2"
