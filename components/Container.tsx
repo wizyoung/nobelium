@@ -63,7 +63,7 @@ const Container: React.VFC<Props> = ({
               meta.title
             )}.png?md=1&fontSize=96px&background=${encodeURIComponent(
               BLOG.darkBackground
-            )}&foreground=${encodeURIComponent(BLOG.lightBackground)}`}
+            )}&foreground=${encodeURIComponent(BLOG.lightBackground)}&lang=zh`}
           />
         ) : (
           <meta
@@ -74,7 +74,7 @@ const Container: React.VFC<Props> = ({
               BLOG.title
             )}&background=${encodeURIComponent(
               BLOG.darkBackground
-            )}&foreground=${encodeURIComponent(BLOG.lightBackground)}`}
+            )}&foreground=${encodeURIComponent(BLOG.lightBackground)}&lang=zh`}
           />
         )}
         <meta property="og:type" content={meta.type} />
@@ -90,7 +90,7 @@ const Container: React.VFC<Props> = ({
               BLOG.darkBackground
             )}&foreground=${encodeURIComponent(
               BLOG.lightBackground
-            )}&isTwitter=true`}
+            )}&isTwitter=true&lang=zh`}
           />
         ) : (
           <meta
@@ -103,7 +103,7 @@ const Container: React.VFC<Props> = ({
               BLOG.darkBackground
             )}&foreground=${encodeURIComponent(
               BLOG.lightBackground
-            )}&isTwitter=true`}
+            )}&isTwitter=true&lang=zh`}
           />
         )}
         {meta.type === 'article' && (
