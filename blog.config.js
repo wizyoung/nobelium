@@ -27,7 +27,7 @@ const BLOG = {
   socialLink: 'https://github.com/wizyoung',
   seo: {
     keywords: ['wizyoung', 'blog'],
-    googleSiteVerification: 'Y4XYmhwD1g_THS7aOp-2BciIrm7aI35-B4TWR95Fi8M' // Remove the value or replace it with your own google site verification code
+    googleSiteVerification: 'Z2DD4cXMxpNvkYGQhL3XKfDvtyfV-1iDPm59Rhifb-Q' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
