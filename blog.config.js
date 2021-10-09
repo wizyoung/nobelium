@@ -5,7 +5,7 @@ const BLOG = {
   title: 'wizyoung',
   author: 'wizyoung',
   email: 'happyyanghehe@gmail.com',
-  link: 'https://wizyoung.vercel.app',
+  link: 'https://wizyoung.dogcraft.xyz',
   description: '',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'dark', // ['light', 'dark', 'auto'],
