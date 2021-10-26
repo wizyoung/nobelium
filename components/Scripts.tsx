@@ -1,7 +1,7 @@
-import Script from 'next/script'
-import BLOG from '@/blog.config'
+import Script from 'next/script';
+import BLOG from '~/blog.config';
 
-const Scripts: React.VFC = () => (
+export const Scripts: React.VFC = () => (
   <>
     {BLOG.analytics && BLOG.analytics.provider === 'ackee' && (
       <Script
@@ -12,9 +12,7 @@ const Scripts: React.VFC = () => (
     )}
     {BLOG.analytics && BLOG.analytics.provider === 'ga' && (
       <>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${BLOG.analytics.gaConfig.measurementId}`}
-        />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${BLOG.analytics.gaConfig.measurementId}`} />
         <Script strategy="lazyOnload" id="ga">
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -26,6 +24,4 @@ const Scripts: React.VFC = () => (
       </>
     )}
   </>
-)
-
-export default Scripts
+);
