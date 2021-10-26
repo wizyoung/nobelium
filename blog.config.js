@@ -1,5 +1,5 @@
 /**
- * @type {import('~/types').BlogConfig}
+ * @type {import('@/types').BlogConfig}
  */
 const BLOG = {
   title: 'wizyoung',
@@ -8,7 +8,7 @@ const BLOG = {
   link: 'https://wizyoung.dogcraft.xyz',
   description: '',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
-  appearance: 'auto', // ['light', 'dark', 'auto'],
+  appearance: 'dark', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#0C1C33', // use hex value, don't forget '#'
@@ -26,8 +26,8 @@ const BLOG = {
   // detail: https://github.com/yokinist/og-image/blob/main/api/_lib/types.ts#L2-L12
   socialLink: 'https://github.com/wizyoung',
   seo: {
-    keywords: ['yokinist'],
-    googleSiteVerification: '', // Remove the value or replace it with your own google site verification code
+    keywords: ['wizyoung', 'blog'],
+    googleSiteVerification: 'Z2DD4cXMxpNvkYGQhL3XKfDvtyfV-1iDPm59Rhifb-Q', // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
@@ -39,28 +39,28 @@ const BLOG = {
       domainId: '', // e.g '0e2257a8-54d4-4847-91a1-0311ea48cc7b'
     },
     gaConfig: {
-      measurementId: 'G-PJ2C55Q3CH', // e.g: G-XXXXXXXXXX
+      measurementId: 'G-Y5JCEXHW7J', // e.g: G-XXXXXXXXXX
     },
   },
   comment: {
     // support provider: gitalk, utterances, cusdis
     provider: 'utterances', // leave it empty if you don't need any comment plugin
     gitalkConfig: {
-      repo: 'for-gitalk', // The repository of store comments
-      owner: 'yokinist',
-      clientID: 'f06077c5603d6099ec37',
-      clientSecret: process.env.GITALK_CLIENT_SECRET,
-      admin: ['yokinist'],
-      id: 'yokinist.me', // Ensure uniqueness and length less than 50
+      repo: '', // The repository of store comments
+      owner: '',
+      clientID: '',
+      clientSecret: '',
+      admin: [],
+      id: '', // Ensure uniqueness and length less than 50
       distractionFreeMode: false,
     },
     utterancesConfig: {
-      repo: '',
+      repo: 'wizyoung/utterances',
     },
     cusdisConfig: {
-      appId: '4c9aa1e3-623a-4773-a9ef-f345f484efe5', // data-app-id'
-      host: 'https://cusdis.com', // data-host, change this if you're using self-hosted version
-      scriptSrc: 'https://cusdis.com/js/cusdis.es.js', // change this if you're using self-hosted version
+      appId: '', // data-app-id'
+      host: '', // data-host, change this if you're using self-hosted version
+      scriptSrc: '', // change this if you're using self-hosted version
     },
   },
   isProd: process.env.VERCEL_ENV === 'production', // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
