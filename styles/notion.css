@@ -1,7 +1,7 @@
 /* NOTION CSS OVERRIDE */
 
 .notion {
-  @apply text-gray-600 dark:text-gray-300;
+  @apply text-gray-600 dark:text-gray-200;
   overflow-wrap: break-word;
 }
 .notion,
@@ -25,36 +25,20 @@ svg + .notion-page-title-text {
 }
 
 .notion-bookmark {
-  @apply border-[1px];
-  @apply border-gray-100;
-  color: inherit;
+  @apply border-blue-700 dark:border-blue-300 !important;
 }
 
 .notion-bookmark .notion-bookmark-title,
 .notion-bookmark .notion-bookmark-link div {
-  @apply text-gray-900 dark:text-gray-200;
+  @apply text-gray-900 dark:text-gray-100;
 }
 
 .notion-bookmark .notion-bookmark-description {
-  @apply text-gray-600 dark:text-gray-300;
-}
-
-.notion .notion-code {
-  border-radius: 5px;
-  padding: 12px;
-  line-height: 150% !important;
-}
-
-.notion-code > code {
-  @apply text-gray-900;
-}
-
-pre[class*='language-'] {
-  line-height: inherit;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .notion-bookmark:hover {
-  @apply border-indigo-400;
+  @apply border-blue-400 !important;
 }
 .notion-viewport {
   z-index: -10;
@@ -72,12 +56,28 @@ pre[class*='language-'] {
 }
 .notion-quote {
   padding: 0.2em 0.9em;
+  @apply text-base !important;
 }
 .notion-collection-row {
   @apply hidden;
 }
+.notion-collection {
+  @apply max-w-full;
+}
+.notion-collection > .notion-collection-header {
+  @apply px-0 !important;
+}
+.notion-collection-header > .notion-collection-view-type {
+  @apply hidden;
+}
+.notion-collection > .notion-table {
+  @apply max-w-full !important;
+}
+.notion-collection > .notion-table > .notion-table-view {
+  @apply px-0 !important;
+}
 a.notion-link {
-  @apply underline dark:text-indigo-200;
+  @apply text-blue-700 border-blue-700 dark:text-blue-400 dark:border-blue-400 !important;
 }
 .notion-list li {
   padding: 0;
@@ -86,38 +86,130 @@ a.notion-link {
   @apply text-gray-500 dark:text-gray-400;
 }
 
-
-/* About ページの特定の画像のみ適応 */
-.notion-block-62c0327d49964498ad3188d9c0d169b3 > div > img {
-  animation: fluid 24s ease 0s infinite;
-  border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+.notion-table-of-contents-item > span {
+  @apply text-gray-500 border-gray-500 dark:text-gray-400 dark:border-gray-400;
 }
 
+/* code */
+.notion-code {
+  @apply bg-gray-50 dark:border-gray-600 dark:bg-gray-800 border-gray-400 rounded-md p-4 !important;
+}
+.notion code {
+  @apply text-gray-700 dark:text-gray-300 border-none shadow-none bg-none p-0;
+}
+.token.cdata,
+.token.doctype,
+.token.prolog {
+  @apply text-gray-700;
+}
+.token.comment {
+  @apply text-gray-400 dark:text-gray-500;
+}
+.dark-mode .token.cdata,
+.dark-mode .token.doctype,
+.dark-mode .token.prolog {
+  @apply text-gray-300;
+}
+.token.punctuation {
+  @apply text-gray-700;
+}
+.dark-mode .token.punctuation {
+  @apply text-gray-300;
+}
+.token.boolean,
+.token.deleted,
+.token.number,
+.token.property,
+.token.symbol,
+.token.tag {
+  @apply text-green-600 !important;
+}
+.token.attr-name,
+.token.builtin,
+.token.char,
+.token.inserted,
+.token.selector {
+  @apply text-purple-600 !important;
+}
+.token.string,
+.token.entity,
+.token.operator,
+.token.url {
+  @apply dark:text-yellow-600 !important;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply dark:text-purple-400 !important;
+}
+.token.class-name,
+.token.function,
+.token.constant {
+  @apply text-red-600 dark:text-blue-500 !important;
+}
+.token.important,
+.token.regex,
+.token.variable {
+  @apply text-yellow-600;
+}
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-gray-700;
+  text-shadow: none !important;
+}
+.dark-mode code[class*='language-'],
+.dark-mode pre[class*='language-'] {
+  @apply text-gray-100;
+}
+pre::-webkit-scrollbar {
+  @apply hidden;
+}
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  @apply bg-transparent !important;
+}
+
+pre[class*='language-'] > code {
+  border-left: 0 none !important;
+}
+
+/* About ページの特定の画像のみ適応 */
+.notion-block-62c0327d49964498ad3188d9c0d169b3 > div > img,
 .notion-block-187cbc6f209a4feb84d375192e98815e > div > img {
   animation: fluid 24s ease 0s infinite;
   border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  width: 192px;
+  height: 192px;
+  @apply bg-gray-100 dark:bg-gray-900 border-2 border-gray-300 dark:border-day;
 }
 
 @keyframes fluid {
-  0%, 100% {
-      border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
   }
   14% {
-      border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
   }
   28% {
-      border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
   }
   42% {
-      border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
   }
   56% {
-      border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
   }
   70% {
-      border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
   }
   84% {
-      border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
   }
 }
