@@ -5,5 +5,4 @@ const parseSafeNumber = (val?: unknown) => {
   return Number(val);
 };
 
-
 export default parseSafeNumber;

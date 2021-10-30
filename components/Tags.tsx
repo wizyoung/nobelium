@@ -21,17 +21,9 @@ const Tags: React.VFC<Props> = ({ tags, currentTag }: Props) => {
                 'text-white bg-black border-black dark:bg-gray-600 dark:border-gray-600': selected,
                 'bg-gray-100 border-gray-100 text-gray-400 dark:bg-night dark:border-gray-800': !selected,
               })}
-
-
-
-
-
             >
               <Link href={selected ? '/' : `/tag/${encodeURIComponent(key)}`} scroll={false}>
                 <a className="block py-2 px-4">{`${key} (${tags[key]})`}</a>
-
-
-
               </Link>
             </li>
           );

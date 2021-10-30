@@ -31,8 +31,6 @@ const BlogPost: React.VFC<Props> = ({ post }) => {
         </header>
         <main>
           <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">{post.summary}</p>
-
-
         </main>
       </article>
     );
@@ -40,11 +38,6 @@ const BlogPost: React.VFC<Props> = ({ post }) => {
 
   return post?.outer_link ? (
     <a href={post.outer_link} target="_blank" rel="noreferrer noopener" aria-label="outer-link">
-
-
-
-
-
       {renderBlogPost({ isOuterLink: true })}
     </a>
   ) : (

@@ -86,7 +86,6 @@ a.notion-link {
   @apply text-gray-500 dark:text-gray-400;
 }
 
-
 /* About ページの特定の画像のみ適応 */
 .notion-block-62c0327d49964498ad3188d9c0d169b3 > div > img {
   animation: fluid 24s ease 0s infinite;

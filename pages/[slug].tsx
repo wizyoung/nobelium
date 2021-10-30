@@ -10,8 +10,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getAllPosts({ includedPages: true });
   if (!posts) return { paths: [], fallback: false };
   const publishPosts = posts.filter((post) => post?.status?.[0] === 'Published' && !post?.outer_link);
-
-
   return {
     paths: publishPosts.map((row) => `${BLOG.path}/${row.slug}`),
     fallback: true,
@@ -51,7 +49,6 @@ const BlogPost: NextPage<Props> = ({ post, blockMap, emailHash }) => {
           swrOptions: {
             fetcher: (id: number) => fetch(`/api/get-tweet-ast/${id}`).then((r) => r.json()),
           },
-
         }}
       >
         <Layout

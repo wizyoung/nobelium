@@ -1,8 +1,6 @@
 import BLOG from '@/blog.config';
 import { getIsClient } from './getIsClient';
 
-
-
 export const GA_TRACKING_ID = BLOG.analytics.gaConfig.measurementId;
 export const IS_PROD = BLOG.isProd;
 

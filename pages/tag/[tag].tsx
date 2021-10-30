@@ -23,8 +23,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   });
   const tags = getAllTags({ posts });
   const filteredPosts = posts.filter((post) => post && post.tags && post.tags.includes(currentTag));
-
-
   return {
     props: {
       tags,
@@ -49,20 +47,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 type Props = React.ComponentProps<typeof SearchLayout> & Omit<React.ComponentProps<typeof Profile>, 'fullWidth'>;
 
-
 const TagPage: NextPage<Props> = ({ tags, posts, currentTag, post, blockMap, emailHash }) => {
-
-
-
-
-
-
-
   return (
     <Container title={currentTag}>
       {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
-
-
       <SearchLayout tags={tags} posts={posts} currentTag={currentTag} />
     </Container>
   );

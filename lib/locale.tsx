@@ -13,6 +13,4 @@ export const LocaleProvider: React.VFC<Props> = ({ children }) => {
   return <LocaleContext.Provider value={locale}>{children}</LocaleContext.Provider>;
 };
 
-
-
 export const useLocale = (): LocalOrNull => useContext(LocaleContext);

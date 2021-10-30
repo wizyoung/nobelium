@@ -25,10 +25,6 @@ const convertObjToQueryString = (query: OGImageQuery): string => {
 };
 
 export const getOGImageURL = ({ title, twitter, root }: GetOGImageUrlArgs): string => {
-
-
-
-
   const defaultParams: OGImageQuery = {
     md: '1',
     fontSize: '96px',
@@ -38,8 +34,6 @@ export const getOGImageURL = ({ title, twitter, root }: GetOGImageUrlArgs): stri
     isTwitter: undefined,
   };
   const baseParams = `${BLOG.ogImageGenerateURL}/${encodeURIComponent(title)}.png?`;
-
-
   if (twitter) {
     if (!root) {
       return (

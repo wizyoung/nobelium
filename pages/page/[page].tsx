@@ -27,9 +27,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postsToShow = posts.slice(BLOG.postsPerPage * (pageNum - 1), BLOG.postsPerPage * pageNum);
   const totalPosts = posts.length;
   const showNext = pageNum * BLOG.postsPerPage < totalPosts;
-
-
-
   return {
     props: {
       page: pageNum, // Current Page
@@ -48,7 +45,6 @@ const Page: NextPage<Props> = ({ postsToShow, page, showNext }) => {
   return (
     <Container>
       {postsToShow && postsToShow.map((post) => <BlogPost key={post.id} post={post} />)}
-
       <Pagination page={page} showNext={showNext} />
     </Container>
   );

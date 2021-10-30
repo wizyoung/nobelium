@@ -12,4 +12,3 @@ export default function getMetadata(rawMetadata: BasePageBlock) {
   };
   return metadata;
 }
-

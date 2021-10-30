@@ -1,7 +1,7 @@
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
- const nextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['gravatar.com', 'pbs.twimg.com'],

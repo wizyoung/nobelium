@@ -14,8 +14,6 @@ export const filterPublishedPosts = ({ posts, includedPages }: Props) => {
   const publishedPosts = posts
     .filter((post) =>
       includedPages ? post?.type?.[0] === 'Post' || post?.type?.[0] === 'Page' : post?.type?.[0] === 'Post',
-
-
     )
     .filter((post) => {
       const postDate = new Date(post?.date?.start_date || post.createdTime);
@@ -23,8 +21,3 @@ export const filterPublishedPosts = ({ posts, includedPages }: Props) => {
     });
   return publishedPosts;
 };
-
-
-
-
-

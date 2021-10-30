@@ -7,11 +7,6 @@ import NextHeadSeo from 'next-head-seo';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
 
-
-
-
-
-
 // import BlogPost from './BlogPost'
 
 type NextHeadSeoProps = Parameters<typeof NextHeadSeo>[0];
@@ -34,34 +29,6 @@ const Container: React.VFC<Props> = ({ children, fullWidth, ...meta }) => {
   const router = useRouter();
   const [customMetaTags, setCustomMetaTags] = useState<NextHeadSeoProps['customLinkTags']>([]);
   const [alreadySet, setAlreadySet] = useState<boolean>(false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   const root = useMemo(() => {
     return router.pathname === (BLOG.path || '/');
@@ -141,57 +108,6 @@ const Container: React.VFC<Props> = ({ children, fullWidth, ...meta }) => {
           site: '@yokinist',
         }}
       />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       <div
         className={classNames('wrapper', {

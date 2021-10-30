@@ -21,19 +21,11 @@ async function getPageProperties(
     const currentPostKey = schema[key]?.name as keyof Post | undefined;
     if (currentPostKey && schema[key]?.type && !excludeProperties.includes(schema[key].type)) {
       properties[currentPostKey] = getTextContent(val as Parameters<typeof getTextContent>[0]);
-
-
-
-
-
-
     } else {
       switch (schema[key]?.type) {
         case 'date': {
           const dateProperty = getDateValue(val as Parameters<typeof getDateValue>[0]);
           const tmpDateProperty: Partial<typeof dateProperty> = dateProperty;
-
-
           if (tmpDateProperty && currentPostKey) {
             delete tmpDateProperty.type;
             properties[currentPostKey] = tmpDateProperty;
@@ -43,8 +35,6 @@ async function getPageProperties(
         case 'select':
         case 'multi_select': {
           const selects = getTextContent(val as Parameters<typeof getTextContent>[0]);
-
-
           if (selects[0]?.length && currentPostKey) {
             properties[currentPostKey] = selects.split(',');
           }

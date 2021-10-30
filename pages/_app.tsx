@@ -21,13 +21,6 @@ import 'react-static-tweets/styles.css';
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false });
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false });
 
-
-
-
-
-
-
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>

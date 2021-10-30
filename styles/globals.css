@@ -232,7 +232,6 @@ nav {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30ff90', endColorstr='#30ff90',GradientType=1 ); /* IE6-9 */
 }
 
-
 @keyframes border_anim {
   0% {
     width: 0%;

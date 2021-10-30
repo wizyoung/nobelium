@@ -41,8 +41,6 @@ const blog: NextPage<Props> = ({ posts, post, blockMap, emailHash, tags }) => {
   return (
     <Container title={BLOG.title} description={BLOG.description}>
       {post && blockMap && <Profile blockMap={blockMap} post={post} emailHash={emailHash} />}
-
-
       <SearchLayout tags={tags} posts={posts} />
     </Container>
   );

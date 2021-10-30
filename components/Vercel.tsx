@@ -24,9 +24,6 @@ const Vercel: React.VFC = () => {
             fill="white"
           />
           <path d="M14.8431 8.27271L20.7772 18.4545H8.90918L14.8431 8.27271Z" fill="white" />
-
-
-
           <path d="M27.6819 0V28" stroke="#5E5E5E" strokeWidth="0.636364" />
         </g>
         <defs>

@@ -50,8 +50,6 @@ const Comments: React.VFC<Props> = ({ post }) => {
         />
       )}
       {BLOG.comment && BLOG.comment.provider === 'utterances' && <UtterancesComponent issueTerm={post.id} />}
-
-
       {BLOG.comment && BLOG.comment.provider === 'cusdis' && (
         <CusdisComponent
           lang={fetchCusdisLang() ?? 'en'}

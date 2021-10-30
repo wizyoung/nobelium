@@ -14,19 +14,11 @@ const links = [
 
 const NavBar: React.VFC = () => {
   const router = useRouter();
-
-
-
-
-
-
-
   const activeNav = useMemo(() => {
     if (router.asPath === links[1].to) return links[1].to;
     if (router.pathname === links[0].to || router.asPath.includes('tag')) return links[0].to;
     return null;
   }, [router]);
-
 
   return (
     <div className="flex-shrink-0">
@@ -39,9 +31,6 @@ const NavBar: React.VFC = () => {
                 className={classNames('block ml-4 text-black dark:text-gray-50 nav', {
                   'border-b-2 border-indigo-400': link.to === activeNav,
                 })}
-
-
-
               >
                 <Link href={link.to}>
                   <a>{link.name}</a>
@@ -64,7 +53,6 @@ const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
   const sentinalRef = useRef<HTMLDivElement>(null);
   const handler = useCallback(([entry]: IntersectionObserverEntry[]) => {
     if (navRef && navRef.current && !BLOG.autoCollapsedNavBar) {
-
       if (!entry.isIntersecting && entry !== undefined) {
         navRef.current.classList.add('sticky-nav-full');
       } else {
@@ -108,12 +96,9 @@ const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
           </Link>
           {navBarTitle ? (
             <p className="ml-2 font-medium text-day dark:text-night header-name">{navBarTitle}</p>
-
-
           ) : (
             <p className="ml-2 font-medium text-day dark:text-night header-name">
               {BLOG.title} -<span className="font-normal">{BLOG.description}</span>
-
             </p>
           )}
         </div>

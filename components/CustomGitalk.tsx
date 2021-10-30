@@ -4,7 +4,6 @@ import type GitalkComponentType from 'gitalk/dist/gitalk-component';
 
 const GitalkComponent = require('gitalk/dist/gitalk-component') as typeof GitalkComponentType;
 
-
 type Props = {
   options: Gitalk.GitalkOptions;
 };

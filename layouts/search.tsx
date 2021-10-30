@@ -21,7 +21,6 @@ const SearchLayout: React.VFC<Props> = ({ tags, posts, currentTag }) => {
         const searchContent = post?.title ?? '' + post?.summary ?? '' + tagContent;
         return searchContent.toLowerCase().includes(searchValue.toLowerCase());
       });
-
     }
     return [];
   }, [posts, searchValue]);
@@ -36,10 +35,6 @@ const SearchLayout: React.VFC<Props> = ({ tags, posts, currentTag }) => {
           placeholder={currentTag ? `${locale.POST.SEARCHIN} #${currentTag}` : locale.POST.SEARCH}
           className="block py-2 px-4 w-full text-black dark:text-white bg-white dark:bg-night rounded-md border border-black dark:border-white"
           onChange={(e) => setSearchValue(e.target.value)}
-
-
-
-
         />
         <svg
           className="absolute top-3 right-3 w-5 h-5 text-black dark:text-white"
@@ -60,10 +55,6 @@ const SearchLayout: React.VFC<Props> = ({ tags, posts, currentTag }) => {
       <div className="my-8 article-container">
         {!filteredBlogPosts.length && <p className="text-gray-500 dark:text-gray-300">{locale.POST.NOTFOUND}</p>}
         {filteredBlogPosts.slice(0, 20).map((post) => (
-
-
-
-
           <BlogPost key={post.id} post={post} />
         ))}
       </div>

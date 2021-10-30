@@ -32,17 +32,9 @@ const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth 
   const locale = useLocale();
   const router = useRouter();
 
-
-
-
-
-
-
-
   const renderContents = () => (
     <article>
       <h1 className="text-3xl font-bold text-black dark:text-white">{post.title}</h1>
-
 
       {post?.type?.[0] !== 'Page' && (
         <nav className="flex items-start mt-7 text-gray-500 dark:text-gray-400">
@@ -60,8 +52,6 @@ const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth 
             <span className="block">&nbsp;/&nbsp;</span>
           </div>
           <div className="mr-2 mb-4 md:ml-0">{formatDate(post?.date?.start_date || post.createdTime, BLOG.lang)}</div>
-
-
           {post.tags && (
             <div className="flex overflow-x-auto flex-nowrap max-w-full article-tags">
               {post.tags.map((tag) => (
@@ -103,9 +93,6 @@ const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth 
         className={classNames('flex justify-between font-medium text-gray-500 dark:text-gray-400', {
           'mb-4': enableCommentArea,
         })}
-
-
-
       >
         <button
           onClick={() => router.push(BLOG.path || '/')}
