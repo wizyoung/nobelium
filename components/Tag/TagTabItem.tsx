@@ -1,7 +1,7 @@
-import { getTagDataBySlug, TagSlug } from '@/lib/tags';
 import classNames from 'classnames';
 import { Twemoji } from 'components/Twemoji';
 import Link from 'next/link';
+import { getTagDataBySlug, TagSlug } from '~/lib/tags';
 
 type Props =
   | {
@@ -20,8 +20,8 @@ export const TagTabItem: React.VFC<Props> = ({ tagKey, selected, ...rest }) => {
   const tagData = getTagDataBySlug(castKey);
   return (
     <li
-      className={classNames('mr-3 font-bold whitespace-nowrap rounded-lg', {
-        'text-gray-300  border-gray-100 dark:text-gray-300 dark:border-gray-700': !selected,
+      className={classNames('mr-3 font-bold whitespace-nowrap rounded-lg min-w-max block', {
+        'text-gray-400 border-gray-100 dark:text-gray-300 dark:border-gray-700': !selected,
         'bg-gray-200 text-gray-700 dark:text-night': selected,
       })}
     >

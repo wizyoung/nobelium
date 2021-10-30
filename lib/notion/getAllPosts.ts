@@ -1,10 +1,10 @@
-import BLOG from '@/blog.config';
-import { Post } from '@/types';
 import { NotionAPI } from 'notion-client';
 import { BasePageBlock } from 'notion-types/build/esm/block';
 import { Collection } from 'notion-types/build/esm/collection';
 import { ExtendedRecordMap } from 'notion-types/build/esm/maps';
 import { idToUuid } from 'notion-utils';
+import BLOG from '~/blog.config';
+import { Post } from '~/types';
 import { getPageProperties, getAllPageIds, filterPublishedPosts } from './index';
 
 export const getAllPosts = async ({ includedPages = false }: { includedPages: boolean }): Promise<Post[]> => {
@@ -49,7 +49,7 @@ const returnGetAllPosts = async ({
   schema,
 }: ReturnGetAllPostsParams) => {
   if (rawMetadata?.type !== 'collection_view_page' && rawMetadata?.type !== 'collection_view') {
-    console.log(`pageId "${id}" is not a database`);
+    console.error(`pageId "${id}" is not a database`);
     return null;
   } else {
     // Construct Data

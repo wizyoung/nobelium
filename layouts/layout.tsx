@@ -1,10 +1,3 @@
-import BLOG from '@/blog.config';
-import { Container } from '@/components';
-import { Comments } from '@/components/Comment';
-import { TagItem } from '@/components/Tag';
-import formatDate from '@/lib/formatDate';
-import { useLocale } from '@/lib/i18n/locale';
-import { Post } from '@/types';
 import classNames from 'classnames';
 import 'gitalk/dist/gitalk.css';
 import { useTheme } from 'next-themes';
@@ -13,6 +6,13 @@ import { useRouter } from 'next/router';
 import { ExtendedRecordMap } from 'notion-types/build/esm/maps';
 import { NotionRenderer, Equation, Code, CollectionRow, Collection } from 'react-notion-x';
 import type { Tweet } from 'react-static-tweets';
+import BLOG from '~/blog.config';
+import { Container } from '~/components';
+import { Comments } from '~/components/Comment';
+import { TagItem } from '~/components/Tag';
+import formatDate from '~/lib/formatDate';
+import { useLocale } from '~/lib/i18n/locale';
+import { Post } from '~/types';
 
 const enableCommentArea = BLOG.comment.provider !== '';
 
@@ -27,6 +27,7 @@ type Props = {
   fullWidth?: boolean;
   onlyContents?: boolean;
   tweet?: typeof Tweet;
+  slug?: string | null;
 };
 
 export const Layout: React.VFC<Props> = ({
@@ -34,6 +35,7 @@ export const Layout: React.VFC<Props> = ({
   post,
   emailHash,
   tweet,
+  slug,
   fullWidth = false,
   onlyContents = false,
 }) => {
@@ -81,7 +83,7 @@ export const Layout: React.VFC<Props> = ({
               tweet: tweet,
             }}
             mapPageUrl={mapPageUrl}
-            darkMode={theme === 'dark'}
+            darkMode={theme !== 'light'}
           />
         </div>
       )}
@@ -97,6 +99,7 @@ export const Layout: React.VFC<Props> = ({
       date={new Date(post.createdTime).toISOString()}
       type="article"
       fullWidth={fullWidth}
+      slug={slug}
     >
       {renderContents()}
       <div

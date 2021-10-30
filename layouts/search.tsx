@@ -1,10 +1,10 @@
-import { BlogPost } from '@/components';
-import { Tags } from '@/components/Tag';
-import { useLocale } from '@/lib/i18n/locale';
-import { getTagDataBySlug, TagSlug } from '@/lib/tags';
-import { Post, TagObj } from '@/types';
 import { useState, useMemo } from 'react';
 import { SearchIcon } from '@heroicons/react/outline';
+import { BlogPost } from '~/components';
+import { Tags } from '~/components/Tag';
+import { useLocale } from '~/lib/i18n/locale';
+import { getTagDataBySlug, TagSlug } from '~/lib/tags';
+import { Post, TagObj } from '~/types';
 
 type Props = {
   posts: Post[];
@@ -36,8 +36,7 @@ export const SearchLayout: React.VFC<Props> = ({ tags, posts, currentTag }) => {
 
   return (
     <>
-      <Tags tags={tags} currentTag={currentTag} />
-      <div className="relative mb-6">
+      <div className="relative my-2">
         <input
           type="text"
           placeholder={currentTag ? `${locale.POST.SEARCHIN} #${currentTagName}` : locale.POST.SEARCH}
@@ -46,7 +45,10 @@ export const SearchLayout: React.VFC<Props> = ({ tags, posts, currentTag }) => {
         />
         <SearchIcon className="absolute top-3 right-3 w-5 h-5 text-gray-500 dark:text-gray-400" />
       </div>
-      <div className="my-4 article-container">
+      <div className="sticky top-16 z-10 bg-day dark:bg-night">
+        <Tags tags={tags} currentTag={currentTag} />
+      </div>
+      <div className="my-5 article-container">
         {!filteredBlogPosts.length && <p className="text-gray-500 dark:text-gray-300">{locale.POST.NOTFOUND}</p>}
         {filteredBlogPosts.map((post) => (
           <BlogPost key={post.id} post={post} />

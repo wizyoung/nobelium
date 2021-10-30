@@ -1,6 +1,6 @@
-import BLOG from '@/blog.config';
-import { Post } from '@/types';
 import { Feed } from 'feed';
+import BLOG from '~/blog.config';
+import { Post } from '~/types';
 
 export function generateRss(posts: Post[]) {
   const year = new Date().getFullYear();
@@ -10,7 +10,7 @@ export function generateRss(posts: Post[]) {
     id: `${BLOG.link}/${BLOG.path}`,
     link: `${BLOG.link}/${BLOG.path}`,
     language: BLOG.lang,
-    favicon: `${BLOG.link}/favicon.png`,
+    favicon: `${BLOG.link}/favicon.svg`,
     copyright: `All rights reserved ${year}, ${BLOG.author}`,
     author: {
       name: BLOG.author,

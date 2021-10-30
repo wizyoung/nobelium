@@ -1,6 +1,6 @@
-import { getAllPosts } from '@/lib/notion';
-import { generateRss } from '@/lib/rss';
 import { GetServerSideProps } from 'next';
+import { getAllPosts } from '~/lib/notion';
+import { generateRss } from '~/lib/rss';
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   res.setHeader('Content-Type', 'text/xml');

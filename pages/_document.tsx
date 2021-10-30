@@ -1,6 +1,6 @@
-import BLOG from '@/blog.config';
-import CJK from '@/lib/cjk';
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import BLOG from '~/blog.config';
+import CJK from '~/lib/cjk';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -56,49 +56,28 @@ class MyDocument extends Document {
                 as="style"
                 href={`https://fonts.googleapis.com/css2?family=Noto+${
                   BLOG.font === 'serif' ? 'Serif' : 'Sans'
-                }+${CJK()}:wght@400;500;700&display=swap`}
+                }+${CJK()}:wght@400;700&display=swap`}
               />
               <link
                 rel="stylesheet"
                 href={`https://fonts.googleapis.com/css2?family=Noto+${
                   BLOG.font === 'serif' ? 'Serif' : 'Sans'
-                }+${CJK()}:wght@400;500;700&display=swap`}
+                }+${CJK()}:wght@400;700&display=swap`}
               />
               <noscript>
                 <link
                   rel="stylesheet"
                   href={`https://fonts.googleapis.com/css2?family=Noto+${
                     BLOG.font === 'serif' ? 'Serif' : 'Sans'
-                  }+${CJK()}:wght@400;500;700&display=swap`}
+                  }+${CJK()}:wght@400;700&display=swap`}
                 />
               </noscript>
             </>
           )}
           <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-          <link rel="icon" href="/favicon.ico" />
+
           <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png" />
           <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed" />
-          {BLOG.appearance === 'auto' ? (
-            <>
-              <meta
-                name="theme-color"
-                content={BLOG.lightBackground}
-                // @ts-ignore
-                media="(prefers-color-scheme: light)"
-              />
-              <meta
-                name="theme-color"
-                content={BLOG.darkBackground}
-                // @ts-ignore
-                media="(prefers-color-scheme: dark)"
-              />
-            </>
-          ) : (
-            <meta
-              name="theme-color"
-              content={BLOG.appearance === 'dark' ? BLOG.darkBackground : BLOG.lightBackground}
-            />
-          )}
         </Head>
         <body className="bg-day dark:bg-night">
           <Main />

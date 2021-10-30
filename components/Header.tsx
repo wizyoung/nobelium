@@ -1,12 +1,13 @@
-import BLOG from '@/blog.config';
-import { fetchLocaleLang } from '@/lib/i18n/lang';
 import classNames from 'classnames';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { SunIcon } from '@heroicons/react/outline';
+import { SunIcon } from '@heroicons/react/solid';
 import { MoonIcon } from '@heroicons/react/solid';
+import BLOG from '~/blog.config';
+import { fetchLocaleLang } from '~/lib/i18n/lang';
+import { Twemoji } from './Twemoji';
 
 const locale = fetchLocaleLang();
 const links = [
@@ -33,7 +34,7 @@ const NavBar: React.VFC = () => {
               <li
                 key={link.id}
                 className={classNames('block ml-4 text-black dark:text-gray-50 nav', {
-                  'border-b-2 border-blue-700 dark:border-blue-300': link.to === activeNav,
+                  'border-b-2 border-blue-700 dark:border-blue-400': link.to === activeNav,
                 })}
               >
                 <Link href={link.to}>
@@ -46,6 +47,7 @@ const NavBar: React.VFC = () => {
           <button
             className="block p-1 bg-night dark:bg-day rounded-full transition-all duration-300"
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            aria-label="toggle Dark Mode"
           >
             {theme === 'light' ? <MoonIcon className="w-5 h-5 text-day" /> : <SunIcon className="w-5 h-5 text-night" />}
           </button>
@@ -99,7 +101,7 @@ export const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
         <div className="flex items-center">
           <Link href="/">
             <a aria-label={BLOG.title}>
-              <div className="h-6">
+              <div className="min-w-max">
                 <svg id="fi_2809425" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="m20.832.542h-17.664c-1.448 0-2.626 1.178-2.626 2.626v17.664c0 1.448 1.178 2.626 2.626 2.626h17.664c1.448 0 2.626-1.178 2.626-2.626v-17.664c0-1.448-1.178-2.626-2.626-2.626z" fill="#607d8b"></path><path d="m4.75 18c-.192 0-.384-.073-.53-.22-.293-.293-.293-.768 0-1.061l4.719-4.719-4.719-4.72c-.293-.293-.293-.768 0-1.061s.768-.293 1.061 0l5.25 5.25c.293.293.293.768 0 1.061l-5.25 5.25c-.147.147-.339.22-.531.22z"></path><path d="m21.25 24h-18.5c-1.517 0-2.75-1.233-2.75-2.75v-18.5c0-1.517 1.233-2.75 2.75-2.75h18.5c1.517 0 2.75 1.233 2.75 2.75v18.5c0 1.517-1.233 2.75-2.75 2.75zm-18.5-22.5c-.689 0-1.25.561-1.25 1.25v18.5c0 .689.561 1.25 1.25 1.25h18.5c.689 0 1.25-.561 1.25-1.25v-18.5c0-.689-.561-1.25-1.25-1.25z"></path><path d="m19.25 18h-6.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h6.5c.414 0 .75.336.75.75s-.336.75-.75.75z"></path>
                 </svg>
