@@ -31,12 +31,12 @@ type Props = {
 const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth = false, onlyContents = false }) => {
   const locale = useLocale();
   const router = useRouter();
+
   const renderContents = () => (
     <article>
       <h1 className="text-3xl font-bold text-black dark:text-white">{post.title}</h1>
-
       {post?.type?.[0] !== 'Page' && (
-        <nav className="flex items-start mt-7 text-gray-500 dark:text-gray-400">
+        <nav className="flex items-start mt-7 mb-4 text-gray-500 dark:text-gray-300">
           <div className="flex mb-4">
             <a href={BLOG.socialLink || '#'} className="flex">
               <Image
@@ -61,7 +61,7 @@ const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth 
         </nav>
       )}
       {blockMap && (
-        <div className="-mt-4">
+        <div className="-mt-4 mb-4 notion-ignore-padding-x">
           <NotionRenderer
             recordMap={blockMap}
             components={{
