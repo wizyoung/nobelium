@@ -4,6 +4,7 @@ import { LocaleProvider } from '@/lib/locale';
 import '@/styles/globals.css';
 import '@/styles/notion.css';
 import 'katex/dist/katex.min.css';
+import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import 'prismjs'
@@ -34,7 +35,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             />
           )}
           {BLOG.isProd && BLOG.analytics.provider === 'ga' && <Gtag />}
-          <Component {...pageProps} />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme={BLOG.appearance === 'auto' ? 'system' : BLOG.appearance}
+            themes={['dark', 'light', 'system']}
+          >
+            <Component {...pageProps} />
+          </ThemeProvider>
         </>
       </LocaleProvider>
     </>
