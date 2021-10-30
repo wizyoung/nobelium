@@ -2,7 +2,6 @@ import { ValueOf } from 'lib/types';
 
 const TAG_SLUGS = {
   All: 'all',
-  Apple: "apple",
   Fun: 'fun',
   Code: 'coding',
   Learn: 'learning',
@@ -18,11 +17,6 @@ type TagData = {
 };
 
 const TAG_DATA: Record<TagSlug, TagData> = {
-  [TAG_SLUGS.Apple]: {
-    name: 'Apple',
-    emoji: '',
-    slug: TAG_SLUGS.Apple,
-  },
   [TAG_SLUGS.Fun]: {
     name: 'Fun',
     emoji: '🛠️',
@@ -30,7 +24,7 @@ const TAG_DATA: Record<TagSlug, TagData> = {
   },
   [TAG_SLUGS.Code]: {
     name: 'Coding',
-    emoji: '👨‍💻️',
+    emoji: '💻',
     slug: TAG_SLUGS.Code,
   },
   [TAG_SLUGS.Learn]: {
