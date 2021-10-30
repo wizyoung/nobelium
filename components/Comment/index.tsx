@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config';
-import { fetchCusdisLang } from '@/lib/cusdisLang';
+import { fetchCusdisLang } from '@/lib/i18n/cusdisLang';
 import { Post } from '@/types';
 import 'gitalk/dist/gitalk.css';
 import dynamic from 'next/dynamic';
@@ -8,14 +8,14 @@ import type { ReactCusdis as ReactCusdisType } from 'react-cusdis';
 
 const GitalkComponent = dynamic(
   () => {
-    return import('@/components/CustomGitalk');
+    return import('@/components/Comment/CustomGitalk');
   },
   { ssr: false },
 );
 
 const UtterancesComponent = dynamic(
   () => {
-    return import('@/components/Utterances');
+    return import('@/components/Comment/Utterances');
   },
   { ssr: false },
 );
@@ -31,7 +31,7 @@ type Props = {
   post: Post;
 };
 
-const Comments: React.VFC<Props> = ({ post }) => {
+export const Comments: React.VFC<Props> = ({ post }) => {
   const router = useRouter();
   return (
     <div>
@@ -66,5 +66,3 @@ const Comments: React.VFC<Props> = ({ post }) => {
     </div>
   );
 };
-
-export default Comments;

@@ -1,9 +1,9 @@
 import BLOG from '@/blog.config';
-import Comment from '@/components/Comment';
-import Container from '@/components/Container';
-import TagItem from '@/components/TagItem';
+import { Container } from '@/components';
+import { Comments } from '@/components/Comment';
+import { TagItem } from '@/components/Tag';
 import formatDate from '@/lib/formatDate';
-import { useLocale } from '@/lib/locale';
+import { useLocale } from '@/lib/i18n/locale';
 import { Post } from '@/types';
 import classNames from 'classnames';
 import 'gitalk/dist/gitalk.css';
@@ -29,7 +29,14 @@ type Props = {
   tweet?: typeof Tweet;
 };
 
-const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth = false, onlyContents = false }) => {
+export const Layout: React.VFC<Props> = ({
+  blockMap,
+  post,
+  emailHash,
+  tweet,
+  fullWidth = false,
+  onlyContents = false,
+}) => {
   const locale = useLocale();
   const router = useRouter();
   const { theme } = useTheme();
@@ -110,9 +117,7 @@ const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth 
           ↑ {locale?.POST.TOP}
         </button>
       </div>
-      <Comment post={post} />
+      <Comments post={post} />
     </Container>
   );
 };
-
-export default Layout;

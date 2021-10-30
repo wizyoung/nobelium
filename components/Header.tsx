@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config';
-import { fetchLocaleLang } from '@/lib/lang';
+import { fetchLocaleLang } from '@/lib/i18n/lang';
 import classNames from 'classnames';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
@@ -60,7 +60,7 @@ type HeaderProps = {
   fullWidth?: boolean;
 };
 
-const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
+export const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
   const navRef = useRef<HTMLDivElement>(null);
   const sentinalRef = useRef<HTMLDivElement>(null);
   const handler = useCallback(([entry]: IntersectionObserverEntry[]) => {
@@ -119,5 +119,3 @@ const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
     </>
   );
 };
-
-export default Header;

@@ -1,12 +1,12 @@
 import BLOG from '@/blog.config';
-import { useLocale } from '@/lib/locale';
+import { useLocale } from '@/lib/i18n/locale';
 import Link from 'next/link';
 
 type Props = {
   page: number;
   showNext: boolean;
 };
-const Pagination: React.VFC<Props> = ({ page, showNext }) => {
+export const Pagination: React.VFC<Props> = ({ page, showNext }) => {
   const locale = useLocale();
   if (!locale) return null;
   const currentPage = +page;
@@ -32,5 +32,3 @@ const Pagination: React.VFC<Props> = ({ page, showNext }) => {
     </div>
   );
 };
-
-export default Pagination;
