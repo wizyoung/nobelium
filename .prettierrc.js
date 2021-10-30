@@ -9,4 +9,3 @@ module.exports = {
     importOrder: ['^[a-zA-Z](.*)$', '^@[a-zA-Z](.*)$$', '^[~/]', '^[./]'],
     importOrderSeparation: false,
   };
-  
