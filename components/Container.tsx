@@ -1,86 +1,96 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import BLOG from '@/blog.config'
+import BLOG from '@/blog.config';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { getOGImageURL } from '@/lib/getOGImageURL';
+import classNames from 'classnames';
+import NextHeadSeo from 'next-head-seo';
+import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
 
-import classNames from 'classnames'
-import { useRouter } from 'next/router'
-import NextHeadSeo from 'next-head-seo'
-import { useEffect, useMemo, useState } from 'react'
-import { getOGImageURL } from '@/lib/getOGImageURL'
+
+
+
+
+
 // import BlogPost from './BlogPost'
 
-type NextHeadSeoProps = Parameters<typeof NextHeadSeo>[0]
+type NextHeadSeoProps = Parameters<typeof NextHeadSeo>[0];
 
 type Props = {
-  children: React.ReactNode
-  layout?: 'blog'
-  type?: 'article' | 'website'
-  title?: string
-  description?: string
-  fullWidth?: boolean
-  date?: string
-  slug?: string
-  createdTime?: string
-}
+  children: React.ReactNode;
+  layout?: 'blog';
+  type?: 'article' | 'website';
+  title?: string;
+  description?: string;
+  fullWidth?: boolean;
+  date?: string;
+  slug?: string;
+  createdTime?: string;
+};
 
-const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
+const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link;
 
-const Container: React.VFC<Props> = ({
-  children,
-  fullWidth,
-  type = 'website',
-  ...customMeta
-}) => {
-  const router = useRouter()
-  const [customMetaTags, setCustomMetaTags] = useState<
-    NextHeadSeoProps['customLinkTags']
-  >([
-    {
-      charSet: 'UTF-8'
-    },
-    {
-      property: 'og:locale',
-      content: BLOG.lang
-    },
-    {
-      name: 'google-site-verification',
-      content: BLOG.seo.googleSiteVerification
-    },
-    {
-      name: 'keywords',
-      content: BLOG.seo.keywords.join(', ')
-    }
-  ])
+const Container: React.VFC<Props> = ({ children, fullWidth, ...meta }) => {
+  const router = useRouter();
+  const [customMetaTags, setCustomMetaTags] = useState<NextHeadSeoProps['customLinkTags']>([]);
+  const [alreadySet, setAlreadySet] = useState<boolean>(false);
 
-  const meta = {
-    title: BLOG.title,
-    type,
-    ...customMeta
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const root = useMemo(() => {
-    return router.pathname === (BLOG.path || '/')
-  }, [router])
+    return router.pathname === (BLOG.path || '/');
+  }, [router]);
 
   const siteUrl = useMemo(() => {
-    return meta.slug ? `${url}/${meta.slug}` : url
-  }, [meta])
+    return meta.slug ? `${url}/${meta.slug}` : url;
+  }, [meta]);
+
+  const siteTitle = useMemo(() => {
+    return meta.title ?? BLOG.title;
+  }, [meta]);
 
   useEffect(() => {
-    if (type !== 'article') return
-    setCustomMetaTags(prevCustomMetaTags =>
+    if (alreadySet || meta.type !== 'article' || !meta) return;
+    setCustomMetaTags((prevCustomMetaTags) =>
       (prevCustomMetaTags ?? []).concat(
         {
           property: 'article:published_time',
-          content: meta?.date || meta?.createdTime || ''
+          content: meta?.date || meta?.createdTime || '',
         },
         {
           property: 'article:author',
-          content: BLOG.author
-        }
-      )
-    )
-  }, [type, meta])
+          content: BLOG.author,
+        },
+      ),
+    );
+    setAlreadySet(true);
+  }, [alreadySet, meta]);
 
   return (
     <div>
@@ -93,25 +103,42 @@ const Container: React.VFC<Props> = ({
           title: meta.title,
           url: siteUrl,
           // locale: BLog.lang,
-          type: meta.type,
+          type: meta.type ?? 'website',
           description: meta.description,
           image: getOGImageURL({
-            title: meta.title,
+            title: siteTitle,
             root,
-            twitter: false
-          })
+            twitter: false,
+          }),
         }}
-        customMetaTags={(customMetaTags ?? []).concat({
-          property: 'twitter:image',
-          content: getOGImageURL({
-            title: meta.title,
-            root,
-            twitter: true
-          })
-        })}
+        customMetaTags={(customMetaTags ?? []).concat(
+          {
+            charSet: 'UTF-8',
+          },
+          {
+            property: 'og:locale',
+            content: BLOG.lang,
+          },
+          {
+            name: 'google-site-verification',
+            content: BLOG.seo.googleSiteVerification,
+          },
+          {
+            name: 'keywords',
+            content: BLOG.seo.keywords.join(', '),
+          },
+          {
+            property: 'twitter:image',
+            content: getOGImageURL({
+              title: siteTitle,
+              root,
+              twitter: true,
+            }),
+          },
+        )}
         twitter={{
           card: 'summary_large_image',
-          site: '@yokinist'
+          site: '@yokinist',
         }}
       />
 
@@ -169,14 +196,14 @@ const Container: React.VFC<Props> = ({
       <div
         className={classNames('wrapper', {
           'font-serif': BLOG.font === 'serif',
-          'font-sans': BLOG.font !== 'serif'
+          'font-sans': BLOG.font !== 'serif',
         })}
       >
-        <Header navBarTitle={meta.title} fullWidth={fullWidth} />
+        <Header navBarTitle={siteTitle} fullWidth={fullWidth} />
         <main
           className={classNames('m-auto flex-grow w-full transition-all', {
             'px-4 md:px-24': fullWidth,
-            'max-w-2xl px-4': !fullWidth
+            'max-w-2xl px-4': !fullWidth,
           })}
         >
           {children}
@@ -184,7 +211,7 @@ const Container: React.VFC<Props> = ({
         <Footer fullWidth={fullWidth} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;
