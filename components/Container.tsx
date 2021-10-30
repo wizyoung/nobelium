@@ -108,7 +108,6 @@ const Container: React.VFC<Props> = ({ children, fullWidth, ...meta }) => {
           site: '@yokinist',
         }}
       />
-
       <div
         className={classNames('wrapper', {
           'font-serif': BLOG.font === 'serif',

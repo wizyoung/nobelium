@@ -31,7 +31,6 @@ type Props = {
 const Layout: React.VFC<Props> = ({ blockMap, post, emailHash, tweet, fullWidth = false, onlyContents = false }) => {
   const locale = useLocale();
   const router = useRouter();
-
   const renderContents = () => (
     <article>
       <h1 className="text-3xl font-bold text-black dark:text-white">{post.title}</h1>
