@@ -1,7 +1,7 @@
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
- const nextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['gravatar.com', 'pbs.twimg.com', 'twemoji.maxcdn.com'],
@@ -24,7 +24,6 @@
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
-    config.resolve.alias['@'] = path.join(__dirname, '.');
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
         react: 'preact/compat',
