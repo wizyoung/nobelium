@@ -21,6 +21,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint --edit $1",
     "pre-push": "yarn tsc"
   },
   "dependencies": {
@@ -28,7 +29,7 @@
     "classnames": "^2.3.1",
     "feed": "^4.2.2",
     "gitalk": "^1.7.2",
-    "next": "^12.0.0",
+    "next": "^12.1.0",
     "next-head-seo": "^0.1.2",
     "next-themes": "^0.0.15",
     "notion-client": "^4.9.10",
@@ -38,13 +39,15 @@
     "react": "^17.0.2",
     "react-cusdis": "^2.0.1",
     "react-dom": "^17.0.2",
-    "react-notion-x": "^4.9.8",
+    "react-notion-x": "4.9.8",
     "react-static-tweets": "^0.5.4",
     "static-tweets": "^0.5.3",
     "tailwindcss": "^2.2.15",
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@trivago/prettier-plugin-sort-imports": "^2.0.4",
     "@types/gtag.js": "^0.0.5",
     "@types/node": "^15.12.3",
