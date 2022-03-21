@@ -19,10 +19,6 @@
     "format": "prettier --write",
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "pre-push": "yarn tsc"
-  },
   "dependencies": {
     "@heroicons/react": "^1.0.4",
     "classnames": "^2.3.1",
