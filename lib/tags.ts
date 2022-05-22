@@ -5,6 +5,7 @@ const TAG_SLUGS = {
   Fun: 'fun',
   Code: 'coding',
   Learn: 'learning',
+  Life: 'life',
   Link: 'link'
 } as const;
 
@@ -31,6 +32,11 @@ const TAG_DATA: Record<TagSlug, TagData> = {
     name: 'Learning',
     emoji: '📝',
     slug: TAG_SLUGS.Learn,
+  },
+  [TAG_SLUGS.Life]: {
+    name: 'Life',
+    emoji: '✨',
+    slug: TAG_SLUGS.Life,
   },
   [TAG_SLUGS.Link]: {
     name: 'Links',
