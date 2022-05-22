@@ -80,11 +80,11 @@ export const Layout: React.VFC<Props> = ({
           <NotionRenderer
             recordMap={blockMap}
             components={{
-              equation: Equation,
-              code: Code,
-              collection: Collection,
-              collectionRow: CollectionRow,
-              tweet: tweet,
+              Equation: Equation,
+              Code: Code,
+              Collection: Collection,
+              // collectionRow: CollectionRow,
+              Tweet: tweet,
             }}
             mapPageUrl={mapPageUrl}
             darkMode={theme !== 'light'}
